@@ -1,0 +1,17 @@
+//
+// Tests-Development.xcconfig
+//
+// Copyright © 2016 Netguru Sp. z o.o. All rights reserved.
+//
+
+#include "Carthage/Checkouts/xcconfigs/Base/Configurations/Debug.xcconfig"
+#include "Base-Common.xcconfig"
+
+_ENVIRONMENT = ENV_TESTS
+
+_BUNDLE_NAME = Hubguru Tests
+_BUNDLE_IDENTIFIER = co.netguru.internal.hubguru.tests
+_BUNDLE_INFOPLIST_PATH = $(SRCROOT)/Hubguru/Resources/Tests-Info.plist
+
+TEST_HOST = $(BUILT_PRODUCTS_DIR)/Hubguru.app/Hubguru
+BUNDLE_LOADER = $(TEST_HOST)

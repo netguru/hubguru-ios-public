@@ -1,0 +1,12 @@
+//
+// App-Development.xcconfig
+//
+// Copyright © 2016 Netguru Sp. z o.o. All rights reserved.
+//
+
+#include "Carthage/Checkouts/xcconfigs/Base/Configurations/Debug.xcconfig"
+#include "App-Common.xcconfig"
+
+_ENVIRONMENT = ENV_DEVELOPMENT
+_BUNDLE_IDENTIFIER = co.netguru.internal.hubguru.development
+_COMPILER_ASSETS_OPTIMIZATION = time

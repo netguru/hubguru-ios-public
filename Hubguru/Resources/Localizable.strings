@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  Hubguru
+
+  Copyright © 2016 Netguru Sp. z o.o. All rights reserved.
+*/
+
+
+"LoginScreen.signInButtonTitle" = "Sign in using Github";
+"SortingViewController.title" = "Select sort type";

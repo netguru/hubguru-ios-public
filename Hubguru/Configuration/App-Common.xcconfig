@@ -1,0 +1,15 @@
+//
+// App-Development.xcconfig
+//
+// Copyright © 2016 Netguru Sp. z o.o. All rights reserved.
+//
+
+#include "../../Carthage/Checkouts/xcconfigs/iOS/iOS-Application.xcconfig"
+#include "Base-Common.xcconfig"
+
+_BUNDLE_NAME = Hubguru
+_BUNDLE_INFOPLIST_PATH = $(SRCROOT)/Hubguru/Resources/App-Info.plist
+_BUNDLE_TESTABLE = YES
+
+_ASSET_ICON = App-Icon
+_ASSET_LAUNCHIMAGE = Launch-Image

@@ -1,0 +1,114 @@
+#
+# bitrise.yml
+#
+# Copyright (c) 2016 Netguru Sp. z o.o. All rights reserved.
+#
+
+# CLI metadata
+
+format_version: 1.1.0
+default_step_lib_source: https://github.com/bitrise-io/bitrise-steplib.git
+
+# Workflow trigger map
+
+trigger_map:
+
+  - push_branch: 'develop'
+    workflow: build-staging
+
+  - pull_request_target_branch: 'develop'
+    workflow: build-pull-request
+
+# Environment configuration
+
+app:
+  envs:
+    - XCODEBUILD_PROJECT: Hubguru.xcodeproj
+    - XCODEBUILD_OPTIONS: _BUILD_NUMBER=$BITRISE_BUILD_NUMBER
+
+# Workflow declarations
+
+workflows:
+
+  # Top level build workflows
+
+  build-staging:
+    envs:
+      - XCODEBUILD_SCHEME: Staging
+    before_run:
+      - cache-pull
+      - bootstrap-carthage
+      - xcode-test
+      - xcode-archive
+    after_run:
+      - cache-push
+      - deploy-hockeyapp
+      - deploy-artifacts
+
+  build-pull-request:
+    envs:
+      - XCODEBUILD_SCHEME: Staging
+    before_run:
+      - cache-pull
+      - bootstrap-carthage
+      - xcode-test
+    after_run:
+      - cache-push
+      - deploy-artifacts
+
+  # Cache workflows
+
+  cache-pull:
+    steps:
+      - cache-pull: {}
+
+  cache-push:
+    steps:
+      - cache-push:
+          inputs:
+            - cache_paths: "./Carthage -> ./Carthage/Cachefile"
+
+  # Bootstrap workflows
+
+  bootstrap-carthage:
+    steps:
+      - carthage:
+          inputs:
+            - carthage_command: bootstrap
+            - carthage_options: --platform iOS --no-use-binaries
+
+  # Xcode workflows
+
+  xcode-test:
+    steps:
+      - xcode-test:
+          inputs:
+            - project_path: $XCODEBUILD_PROJECT
+            - scheme: $XCODEBUILD_SCHEME
+            - xcodebuild_test_options: $XCODEBUILD_OPTIONS
+            - generate_code_coverage_files: 'yes'
+
+  xcode-archive:
+    steps:
+      - xcode-archive:
+          inputs:
+            - project_path: $XCODEBUILD_PROJECT
+            - scheme: $XCODEBUILD_SCHEME
+            - xcodebuild_options: $XCODEBUILD_OPTIONS
+
+  # Deploy workflows
+
+  deploy-artifacts:
+    steps:
+      - deploy-to-bitrise-io:
+          inputs:
+            - notify_user_groups: none
+            - is_enable_public_page: false
+
+  deploy-hockeyapp:
+    steps:
+      - hockeyapp-deploy:
+          inputs:
+            - api_token: $HOCKEYAPP_API_TOKEN
+            - app_id: $HOCKEYAPP_APP_ID
+            - notify: 0
