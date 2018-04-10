@@ -16,7 +16,7 @@ Application supports iOS 10.0 or higher and every compatible iPhone.
 
 Project requires the following tools to be installed:
 
-- Xcode 8.1.X using the latest stable SDK (iOS 10)
+- Xcode 9.3.X using the latest stable SDK (iOS 11)
 - Carthage 0.18.X or higher
 
 ## Configuration
