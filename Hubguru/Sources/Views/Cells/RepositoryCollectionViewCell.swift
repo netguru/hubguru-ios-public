@@ -27,14 +27,14 @@ public final class RepositoryCollectionViewCell: UICollectionViewCell {
 
 	public private(set) lazy var ownerLabel: UILabel = {
 		let label = UILabel()
-		label.font = .systemFont(ofSize: 18, weight: UIFontWeightLight)
+		label.font = .systemFont(ofSize: 18, weight: .light)
 		label.textColor = .black
 		return label
 	}()
 
 	private lazy var slashLabel: UILabel = {
 		let label = UILabel()
-		label.font = .systemFont(ofSize: 18, weight: UIFontWeightLight)
+		label.font = .systemFont(ofSize: 18, weight: .light)
 		label.textColor = .black
 		label.text = "/"
 		return label
@@ -42,7 +42,7 @@ public final class RepositoryCollectionViewCell: UICollectionViewCell {
 
 	public private(set) lazy var nameLabel: UILabel = {
 		let label = UILabel()
-		label.font = .systemFont(ofSize: 18, weight: UIFontWeightMedium)
+		label.font = .systemFont(ofSize: 18, weight: .medium)
 		label.textColor = .black
 		return label
 	}()

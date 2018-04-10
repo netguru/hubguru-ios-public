@@ -43,10 +43,10 @@ class WebLinkParser {
                 break
             }
             let relationship = one[startRelationship.upperBound..<endRelationship.lowerBound]
-            if let relation = LinkRelation.init(rawValue: relationship) {
-                links.append(WebLink(urlString: path, relation: relation))
+            if let relation = LinkRelation.init(rawValue: String(relationship)) {
+                links.append(WebLink(urlString: String(path), relation: relation))
             } else {
-                links.append(WebLink(urlString: path, relation: .other))
+                links.append(WebLink(urlString: String(path), relation: .other))
             }
         }
         
