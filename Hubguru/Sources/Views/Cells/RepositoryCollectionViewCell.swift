@@ -56,9 +56,9 @@ public final class RepositoryCollectionViewCell: UICollectionViewCell {
 		contentView.addSubview(slashLabel)
 		contentView.addSubview(nameLabel)
 
-		ownerLabel <- [Top(16), Left(16)]
-		slashLabel <- [FirstBaseline().to(ownerLabel), Left(4).to(ownerLabel)]
-		nameLabel <- [FirstBaseline().to(slashLabel), Left(4).to(slashLabel), Right(16)]
+		ownerLabel.easy.layout([Top(16), Left(16)])
+		slashLabel.easy.layout([FirstBaseline().to(ownerLabel), Left(4).to(ownerLabel)])
+		nameLabel.easy.layout([FirstBaseline().to(slashLabel), Left(4).to(slashLabel), Right(16)])
 
 	}
 

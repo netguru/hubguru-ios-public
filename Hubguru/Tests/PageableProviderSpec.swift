@@ -44,7 +44,7 @@ class PageableProviderSpec: XCTestCase {
 				XCTAssert(error as! PageableProviderError == PageableProviderError.lastPageReached, "Proper error should be returned")
 				pagesExpectation.fulfill()
 			})
-			.addDisposableTo(disposeBag)
+			.disposed(by: disposeBag)
 
         waitForExpectations(timeout: 1) { _ in }
     }

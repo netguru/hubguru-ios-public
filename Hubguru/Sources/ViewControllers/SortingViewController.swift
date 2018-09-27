@@ -30,9 +30,9 @@ class SortingViewController: UITableViewController {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
         title = NSLocalizedString("SortingViewController.title", comment: "Select sort type")
         
-        allTypes.bindTo(tableView.rx.items(cellIdentifier: reuseIdentifier, cellType: UITableViewCell.self)) { row, type, cell in
+        allTypes.bind(to: tableView.rx.items(cellIdentifier: reuseIdentifier, cellType: UITableViewCell.self)) { row, type, cell in
             cell.textLabel?.text = type.rawValue
-        }.addDisposableTo(disposeBag)
+        }.disposed(by: disposeBag)
         
         tableView.rx.modelSelected(SortType.self).subscribe(onNext: { [weak self] type in
             guard let strongSelf = self, let selectedRowIndexPath = strongSelf.tableView.indexPathForSelectedRow, let delegate = strongSelf.delegate else {
@@ -40,7 +40,7 @@ class SortingViewController: UITableViewController {
             }
             strongSelf.tableView.deselectRow(at: selectedRowIndexPath, animated: true)
             delegate.sortingController(sortingViewController: strongSelf, didSelectSortType: type)
-        }).addDisposableTo(disposeBag)
+        }).disposed(by: disposeBag)
         
     }
 }

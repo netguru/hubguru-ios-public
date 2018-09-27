@@ -374,12 +374,13 @@
 					3A7708791DF499D300C3E2BF = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = 9HJ69C5G9K;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 					};
 					3A77088D1DF499D300C3E2BF = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = 9HJ69C5G9K;
-						LastSwiftMigration = 0810;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 3A7708791DF499D300C3E2BF;
 					};

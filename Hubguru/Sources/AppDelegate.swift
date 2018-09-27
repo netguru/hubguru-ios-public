@@ -16,7 +16,7 @@ import UIKit
 	@nonobjc fileprivate lazy var window: UIWindow? = UIWindow(frame: UIScreen.main.bounds)
 
 	/// - SeeAlso: UIApplicationDelegate.application(_:willFinishLaunchingWithOptions:)
-    fileprivate func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    fileprivate func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
 		guard let window = window else {
 			fatalError("There is no way `window` can be `nil` at this point")
