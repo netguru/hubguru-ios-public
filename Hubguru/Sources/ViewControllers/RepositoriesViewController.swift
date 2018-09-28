@@ -45,8 +45,8 @@ public final class RepositoriesViewController: UICollectionViewController {
 	private func setupReactiveBindings() {
 
 		viewModel.repositories
-			.bindTo(collectionView!.rx.items(cellIdentifier: viewModel.collectionViewCellReuseIdentifier, cellType: viewModel.collectionViewCellClass))(viewModel.collectionViewCellConfigure)
-			.addDisposableTo(disposeBag)
+			.bind(to: collectionView!.rx.items(cellIdentifier: viewModel.collectionViewCellReuseIdentifier, cellType: viewModel.collectionViewCellClass))(viewModel.collectionViewCellConfigure)
+			.disposed(by: disposeBag)
 
 	}
 

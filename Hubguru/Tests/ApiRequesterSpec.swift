@@ -34,7 +34,7 @@ class ApiRequesterSpec: XCTestCase {
 				XCTAssertEqual(String(data: value.1, encoding: .utf8), "fixture", "Response data should be correct")
 				responseExpectation.fulfill()
 			})
-			.addDisposableTo(disposeBag)
+			.disposed(by: disposeBag)
 
         waitForExpectations(timeout: 10) { _ in
             OHHTTPStubs.removeStub(stubObject)
@@ -55,7 +55,7 @@ class ApiRequesterSpec: XCTestCase {
 				XCTAssertEqual(value.json.dictionaryObject! as NSDictionary, ["foo": ["bar", 1, true]] as NSDictionary, "Response json should be corretly parsed")
 				responseExpectation.fulfill()
 			})
-			.addDisposableTo(disposeBag)
+			.disposed(by: disposeBag)
 
 		waitForExpectations(timeout: 10) { _ in
 			OHHTTPStubs.removeStub(stubObject)
@@ -72,7 +72,7 @@ class ApiRequesterSpec: XCTestCase {
         sut.response(query: QueryMock()).subscribe(onNext: { _ in }, onError: { error in
             XCTAssert((error as! RequestError) == RequestError.wrongStatusCode(400), "Proper status code should be returned")
             responseExpectation.fulfill()
-        }, onCompleted: nil, onDisposed: nil).addDisposableTo(disposeBag)
+        }, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
         
         waitForExpectations(timeout: 1) { _ in
             OHHTTPStubs.removeStub(stubObject)

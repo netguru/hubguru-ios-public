@@ -18,11 +18,11 @@ final class LoginView: UIView {
         backgroundColor = UIColor(hex: 0x262626)
         
         addSubview(signInButton)
-        signInButton <- [
-            Center(CGPoint(x: 0, y: -100)),
-            Height(46),
-            Width(250)
-        ]
+        signInButton.easy.layout(
+            [Center(CGPoint(x: 0, y: -100)),
+             Height(46),
+             Width(250)]
+        )
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -39,7 +39,7 @@ fileprivate extension UIButton {
         signInButton.layer.cornerRadius = 8
         signInButton.layer.borderColor = UIColor(hex: 0x464646).cgColor
         signInButton.layer.borderWidth = 1
-        signInButton.imageEdgeInsets = EdgeInsets(top: 0, left: -10, bottom: 0, right: 10)
+        signInButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: -10, bottom: 0, right: 10)
         return signInButton
     }
 }

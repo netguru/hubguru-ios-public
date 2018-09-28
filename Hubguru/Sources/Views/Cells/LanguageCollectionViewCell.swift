@@ -15,7 +15,7 @@ final class LanguageCollectionViewCell: UICollectionViewCell, Reusable {
     override init(frame: CGRect) {
         super.init(frame: frame)
         contentView.addSubview(titleLabel)
-        titleLabel <- Edges()
+        titleLabel.easy.layout(Edges())
     }
     
     required init?(coder aDecoder: NSCoder) {

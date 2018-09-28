@@ -49,7 +49,16 @@ extension ApiRequester {
 	///
 	/// - Returns: An observable of `JSON` response.
 	func jsonResponse(for query: Query) -> Observable<(response: HTTPURLResponse, json: JSON)> {
-		return response(query: query).map { (response: $0.0, json: JSON(data: $0.1)) }
+		return response(query: query).map {
+			let json: JSON?
+			do {
+				json = try JSON(data: $0.1)
+			} catch let error {
+				throw error
+			}
+			
+			return (response: $0.0, json: json!)
+		}
 	}
 
 }
