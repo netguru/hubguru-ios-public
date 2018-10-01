@@ -35,7 +35,7 @@ public final class RepositoriesViewModel {
 
 	/// An observable of repositories.
 	public var repositories: Observable<[Repository]> {
-		// TODO: Add your implemenattion here.
+		// TODO: Add your implementation here.
 		return Observable.just([])
 	}
 
@@ -55,7 +55,7 @@ public final class RepositoriesViewModel {
 		return { _, repository, cell in
 			if let cell = cell as? RepositoryCollectionViewCell {
 				cell.nameLabel.text = repository.name
-				// TODO: Add your implemenattion here.
+				// TODO: Add your implementation here.
 			}
 		}
 	}

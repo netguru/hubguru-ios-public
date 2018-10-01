@@ -18,10 +18,6 @@ enum LinkRelation: String {
 struct WebLink: Equatable {
     let urlString: String
     let relation: LinkRelation
-    
-    public static func ==(lhs: WebLink, rhs: WebLink) -> Bool {
-        return lhs.relation == rhs.relation && lhs.urlString == rhs.urlString
-    }
 }
 
 /// Use this class to parse Web Links (RFC5988)

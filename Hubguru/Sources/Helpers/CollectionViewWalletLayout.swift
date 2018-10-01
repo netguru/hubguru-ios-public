@@ -9,6 +9,6 @@ import UIKit
 /// A wallet collection view layout.
 public final class CollectionViewWalletLayout: UICollectionViewFlowLayout {
 
-	// TODO: Add your implemenattion here.
+	// TODO: Add your implementation here.
 
 }

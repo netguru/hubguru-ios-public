@@ -27,6 +27,6 @@ public final class CollectionViewWalletLayoutAttributes: UICollectionViewLayoutA
 
 	}
 
-	// TODO: Add your implemenattion here.
+	// TODO: Add your implementation here.
 
 }

@@ -13,19 +13,6 @@ enum PageableProviderError: Error, Equatable {
     case responseError
     case lastPageReached
     case pageableUrlBroken
-    
-    static func ==(lhs: PageableProviderError, rhs: PageableProviderError) -> Bool {
-        switch (lhs, rhs) {
-        case (.responseError, .responseError):
-            return true
-        case (.lastPageReached, .lastPageReached):
-            return true
-        case (.pageableUrlBroken, .pageableUrlBroken):
-            return true
-        default:
-            return false
-        }
-    }
 }
 
 class PageableProvider {
