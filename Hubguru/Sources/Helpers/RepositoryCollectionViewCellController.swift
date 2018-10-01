@@ -31,12 +31,12 @@ public final class RepositoryCollectionViewCellController {
 	/// - Parameters:
 	///     - layoutAttributes: Latyout attributes that cell is applying.
 	public func cellIsApplyingLayoutAttributes(_ layoutAttributes: UICollectionViewLayoutAttributes) {
-		// TODO: Add your implemenattion here.
+		// TODO: Add your implementation here.
 	}
 
 	/// Called by cell when it is preparing for reuse.
 	public func cellIsPreparingForReuse() {
-		// TODO: Add your implemenattion here.
+		// TODO: Add your implementation here.
 	}
 
 }
