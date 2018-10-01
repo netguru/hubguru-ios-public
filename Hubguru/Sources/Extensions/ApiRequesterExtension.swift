@@ -11,13 +11,6 @@ import RxSwift
 
 enum RequestError: Error, Equatable {
     case wrongStatusCode(Int)
-    
-    static func ==(lhs: RequestError, rhs: RequestError) -> Bool {
-        switch (lhs, rhs) {
-        case (let .wrongStatusCode(code1), let .wrongStatusCode(code2)):
-            return code1 == code2
-        }
-    }
 }
 
 extension ApiRequester {
