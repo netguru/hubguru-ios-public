@@ -19,7 +19,7 @@ internal extension UIColor {
     /// - parameter alpha: alpha double value
     ///
     /// - returns: Initialized UIColor
-    internal convenience init(hex: HexColor, alpha: Double = 1.0) {
+    convenience init(hex: HexColor, alpha: Double = 1.0) {
         self.init(
             red: CGFloat(hex >> 16 & 0xff) / 0xff,
             green: CGFloat(hex >> 8 & 0xff) / 0xff,

@@ -44,7 +44,7 @@ _BUNDLE_TESTABLE = NO
 _DEPLOYMENT_IOS_DEVICES = 1
 
 /// Target minimum iOS version of the product.
-_DEPLOYMENT_IOS_VERSION = 10.0
+_DEPLOYMENT_IOS_VERSION = 11.0
 
 // MARK: Code signing
 
@@ -70,7 +70,7 @@ _ASSET_LAUNCHIMAGE =
 // MARK: Compiling
 
 /// The version of Swift to be used.
-_COMPILER_SWIFT_VERSION = 4.2
+_COMPILER_SWIFT_VERSION = 5.0
 
 /// Additional flags for the Swift compiler.
 _COMPILER_SWIFT_FLAGS =

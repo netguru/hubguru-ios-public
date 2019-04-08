@@ -2,22 +2,16 @@
 
 Welcome to the **Hubguru** iOS app repository.
 
-## Team
-
-- [Adrian Kashivskyy](mailto:adrian.kashivskyy@netguru.co) – Developer
-- [Marcin Siemaszko](mailto:marcin.siemaszko@netguru.co) – Developer
-- [Radosław Szeja](mailto:radoslaw.szeja@netguru.co) – Developer
-
 ## Project
 
-Application supports iOS 10.0 or higher and every compatible iPhone.
+Application supports iOS 11.0 or higher and every compatible iPhone.
 
 ## Tools & Requirements
 
 Project requires the following tools to be installed:
 
 - Xcode 10.x using the latest stable SDK (iOS 12)
-- Carthage 0.31.x or higher
+- Carthage 0.33.x or higher
 
 ## Configuration
 
