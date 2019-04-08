@@ -2,15 +2,9 @@
 
 Welcome to the **Hubguru** iOS app repository.
 
-## Team
-
-- [Adrian Kashivskyy](mailto:adrian.kashivskyy@netguru.co) – Developer
-- [Marcin Siemaszko](mailto:marcin.siemaszko@netguru.co) – Developer
-- [Radosław Szeja](mailto:radoslaw.szeja@netguru.co) – Developer
-
 ## Project
 
-Application supports iOS 10.0 or higher and every compatible iPhone.
+Application supports iOS 11.0 or higher and every compatible iPhone.
 
 ## Tools & Requirements
 

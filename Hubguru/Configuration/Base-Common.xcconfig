@@ -44,7 +44,7 @@ _BUNDLE_TESTABLE = NO
 _DEPLOYMENT_IOS_DEVICES = 1
 
 /// Target minimum iOS version of the product.
-_DEPLOYMENT_IOS_VERSION = 10.0
+_DEPLOYMENT_IOS_VERSION = 11.0
 
 // MARK: Code signing
 
